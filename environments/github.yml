@@ -1,0 +1,4 @@
+name: github
+variables:
+  - name: baseUrl
+    value: https://api.github.com

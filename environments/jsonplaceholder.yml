@@ -1,0 +1,4 @@
+name: jsonplaceholder
+variables:
+  - name: baseUrl
+    value: https://jsonplaceholder.typicode.com

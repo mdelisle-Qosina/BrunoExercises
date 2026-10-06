@@ -1,0 +1,4 @@
+name: httpbin
+variables:
+  - name: baseUrl
+    value: https://httpbin.org

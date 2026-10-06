@@ -1,0 +1,4 @@
+name: pokeapi
+variables:
+  - name: baseUrl
+    value: https://pokeapi.co/api/v2
