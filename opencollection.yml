@@ -1,7 +1,7 @@
 opencollection: 1.0.0
 
 info:
-  name: rest-api-practice/
+  name: rest-api-practice
 bundled: false
 extensions:
   bruno:
