@@ -16,7 +16,7 @@ After each exercise, write one line on what surprised you.
 
 | Code | Meaning | What my UI should show |
 | --- | --- | --- |
-| 200 | | |
+| 200 | OK | |
 | 201 | | |
 | 204 | | |
 | 301 | | |
@@ -28,7 +28,7 @@ After each exercise, write one line on what surprised you.
 
 ## Level 2: CRUD
 
-- 2.1 Create:
+- 2.1 Create: POST /posts with a JSON body (title, body, userId) and Content-Type: application/json → 201 Created, id 101. Always 101 because JSONPlaceholder already has 100 posts and only pretends to save new ones, so a GET /posts/101 afterward returns 404.
 - 2.2 Break the create:
 - 2.3 PUT vs PATCH:
 - 2.4 Delete:
