@@ -33,7 +33,7 @@ After each exercise, write one line on what surprised you.
 - 2.3 PUT vs PATCH: PUT /posts/1 with only title → 200 with just title and id; PUT replaces the whole post, so userId and body are lost. PATCH /posts/1 with only title → 200 with all four fields; PATCH changes only the fields sent and keeps the rest. Both must target /posts/1: PUT or PATCH on /posts returns 404 because the URL does not say which post to change.
 - 2.4 Delete: DELETE /posts/1 → 200 with an empty {}; there is nothing left to return, so the status code is the answer (many real APIs send 204 No Content instead). GET /posts/1 afterward still returns the post because JSONPlaceholder never really deletes anything. On a real API it would return 404.
 - 2.5 Full lifecycle on Restful Booker:
-- 2.6 Pagination:
+- 2.6 Pagination: /products?limit=10&skip=0, 10, 20 → products 1–10, 11–20, 21–30. skip is how many products to skip from the start (skip = (page − 1) × limit), not a range, so a middle range cannot be skipped in one request; skip=11-30 returns 400. total is 194, so total pages = Math.ceil(194 / 10) = 20, with 4 products on the last page (skip=190). Infinite scroll keeps fetching while skip + limit < total.
 - 2.7 Search, sort and select:
 
 ## Level 3: Environments, variables and chaining
