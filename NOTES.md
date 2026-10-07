@@ -34,7 +34,7 @@ After each exercise, write one line on what surprised you.
 - 2.4 Delete: DELETE /posts/1 → 200 with an empty {}; there is nothing left to return, so the status code is the answer (many real APIs send 204 No Content instead). GET /posts/1 afterward still returns the post because JSONPlaceholder never really deletes anything. On a real API it would return 404.
 - 2.5 Full lifecycle on Restful Booker:
 - 2.6 Pagination: /products?limit=10&skip=0, 10, 20 → products 1–10, 11–20, 21–30. skip is how many products to skip from the start (skip = (page − 1) × limit), not a range, so a middle range cannot be skipped in one request; skip=11-30 returns 400. total is 194, so total pages = Math.ceil(194 / 10) = 20, with 4 products on the last page (skip=190). Infinite scroll keeps fetching while skip + limit < total.
-- 2.7 Search, sort and select:
+- 2.7 Search, sort and select: GET /products/search?q=phone&sortBy=price&order=desc&select=title,price → 23 products, most expensive first (iPhone 13 Pro at 1099.99), each with only id, title and price. q searches titles and descriptions, so AirPods Max (headphones) match "phone" too. id always comes back even when not selected, which a product card needs as its React key. Asking the API for only the fields the card needs keeps responses small.
 
 ## Level 3: Environments, variables and chaining
 
