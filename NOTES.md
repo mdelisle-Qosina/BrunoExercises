@@ -30,8 +30,8 @@ After each exercise, write one line on what surprised you.
 
 - 2.1 Create: POST /posts with a JSON body (title, body, userId) and Content-Type: application/json → 201 Created, id 101. Always 101 because JSONPlaceholder already has 100 posts and only pretends to save new ones, so a GET /posts/101 afterward returns 404.
 - 2.2 Break the create: (1) Body type Text, Content-Type: application/json kept → still 201 with the full post, because the server reads the raw text and only the header tells it how to parse it. (2) Header removed → 201 but only { "id": 101 }; the server could not tell the body was JSON, so it dropped title, body and userId. In fetch(), JSON.stringify() is needed because a request body can only be text (an object becomes "[object Object]"), and the header is needed because fetch labels a string body text/plain by default.
-- 2.3 PUT vs PATCH:
-- 2.4 Delete:
+- 2.3 PUT vs PATCH: PUT /posts/1 with only title → 200 with just title and id; PUT replaces the whole post, so userId and body are lost. PATCH /posts/1 with only title → 200 with all four fields; PATCH changes only the fields sent and keeps the rest. Both must target /posts/1: PUT or PATCH on /posts returns 404 because the URL does not say which post to change.
+- 2.4 Delete: DELETE /posts/1 → 200 with an empty {}; there is nothing left to return, so the status code is the answer (many real APIs send 204 No Content instead). GET /posts/1 afterward still returns the post because JSONPlaceholder never really deletes anything. On a real API it would return 404.
 - 2.5 Full lifecycle on Restful Booker:
 - 2.6 Pagination:
 - 2.7 Search, sort and select:
